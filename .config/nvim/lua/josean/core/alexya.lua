@@ -41,5 +41,5 @@ function Select_next_colorscheme()
 end
 keymap.set("n", "<leader>co", "<cmd>lua Select_next_colorscheme()<cr>", { desc = "Select next colorscheme(theme)" })
 
--- F2 to rename (the same as visual studio)
-keymap.set("n", "<leader>bgc", "<cmd>lua Select_next_colorscheme()<cr>", { desc = "Select next colorscheme(theme)" })
+-- open the Outline window on the right side
+keymap.set("n", "<leader>ol", ":AerialToggle! right<CR>", { desc = "Launch outline panel" })

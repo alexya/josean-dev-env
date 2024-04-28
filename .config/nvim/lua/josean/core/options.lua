@@ -37,3 +37,6 @@ opt.splitbelow = true -- split horizontal window to the bottom
 
 -- turn off swapfile
 opt.swapfile = false
+
+-- customize the font and size
+-- opt.guifont = "MesloLGL_Nerd_Font_Mono:h15"
