@@ -43,3 +43,22 @@ keymap.set("n", "<leader>co", "<cmd>lua Select_next_colorscheme()<cr>", { desc =
 
 -- open the Outline window on the right side
 keymap.set("n", "<leader>ol", ":AerialToggle! right<CR>", { desc = "Launch outline panel" })
+
+-- copy the full path of the current opened file to the clipboard
+keymap.set("n", "<leader>fp", "<cmd>let @+=expand('%:p')<CR>", { desc = "Copy full path to clipboard" })
+
+-- copy the current line to clipboard
+keymap.set(
+  "n",
+  "<leader>cp",
+  '"+yy',
+  { noremap = true, silent = true, desc = "Copy current line to clipboard in normal mode" }
+)
+
+-- copy the visual selection to the clipboard
+keymap.set(
+  "v",
+  "<leader>cp",
+  ":y +<CR>gv`><Esc>",
+  { noremap = true, silent = true, desc = "Copy the visual selection to the clipboard" }
+)
