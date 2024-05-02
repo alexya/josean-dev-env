@@ -16,4 +16,12 @@ return {
       "nvim-tree/nvim-web-devicons",
     },
   },
+  -- Change the colors, opacity of the theme
+  -- {
+  --   "mvllow/modes.nvim",
+  --   tag = "v0.2.1",
+  --   config = function()
+  --     require("modes").setup()
+  --   end,
+  -- },
 }

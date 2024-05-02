@@ -27,7 +27,7 @@ return {
 
         -- set keybinds
         opts.desc = "Show LSP references"
-        keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
+        keymap.set("n", "gr", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
 
         opts.desc = "Go to declaration"
         keymap.set("n", "gD", vim.lsp.buf.declaration, opts) -- go to declaration
@@ -52,7 +52,7 @@ return {
         keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show  diagnostics for file
 
         opts.desc = "Show line diagnostics"
-        keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts) -- show diagnostics for line
+        keymap.set("n", "<leader>di", vim.diagnostic.open_float, opts) -- show diagnostics for line
 
         opts.desc = "Go to previous diagnostic"
         keymap.set("n", "[d", vim.diagnostic.goto_prev, opts) -- jump to previous diagnostic in buffer
@@ -62,6 +62,33 @@ return {
 
         opts.desc = "Show documentation for what is under cursor"
         keymap.set("n", "K", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
+
+        opts.desc = "Show signature help"
+        keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts) -- Show signature help
+
+        opts.desc = "Print out the current workspace folder"
+        keymap.set("n", "<leader>wf", function()
+          print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+        end, opts) -- show documentation for what is under cursor
+
+        opts.desc = "Format the curent buffer"
+        keymap.set("n", "<leader>fb", function()
+          vim.lsp.buf.format({ async = true })
+        end, opts)
+
+        opts.desc = "Format the selected range"
+        local range_formatting = function()
+          local start_row, _ = unpack(vim.api.nvim_buf_get_mark(0, "<"))
+          local end_row, _ = unpack(vim.api.nvim_buf_get_mark(0, ">"))
+          vim.lsp.buf.format({
+            range = {
+              ["start"] = { start_row, 0 },
+              ["end"] = { end_row, 0 },
+            },
+            async = true,
+          })
+        end
+        keymap.set("v", "<leader>fm", range_formatting, opts)
 
         opts.desc = "Restart LSP"
         keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
@@ -135,4 +162,3 @@ return {
     })
   end,
 }
-

@@ -30,7 +30,12 @@ return {
             ["<C-k>"] = actions.move_selection_previous, -- move to prev result
             ["<C-j>"] = actions.move_selection_next, -- move to next result
             ["<C-q>"] = actions.send_selected_to_qflist + custom_actions.open_trouble_qflist,
+            ["<C-o>"] = actions.select_tab, -- open the current selected file in a new tab
             ["<C-t>"] = trouble_telescope.smart_open_with_trouble,
+          },
+          n = {
+            ["<C-o>"] = actions.select_tab, -- open the current selected file in a new tab
+            ["tt"] = actions.select_tab, -- open the current selected file in a new tab
           },
         },
       },

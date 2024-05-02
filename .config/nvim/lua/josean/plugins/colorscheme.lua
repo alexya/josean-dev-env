@@ -1,21 +1,28 @@
 return {
-  {
-    "miikanissi/modus-themes.nvim",
-    priority = 1000,
-    config = function()
-      vim.cmd([[colorscheme modus]])
-    end,
-  },
+  -- "zaldih/themery.nvim", -- a plugin to show a list to switch colortheme
+  -- -- event = "VeryLazy",
+  -- config = function()
+  --   local themery = require("themery")
+  --   themery.setup({
+  --     themes = {
+  --       "modus",
+  --       "tokyonight",
+  --       "everforest",
+  --       "vscode",
+  --       "visual_studio_code",
+  --     },
+  --   })
+  -- end,
   -- {
   --   "askfiy/visual_studio_code",
   --   priority = 1000,
   --   opt = {
   --     -- `dark` or `light`
-  --     mode = "dark",
+  --     mode = "light",
   --     -- Whether to load all color schemes
   --     preset = true,
   --     -- Whether to enable background transparency
-  --     transparent = false,
+  --     transparent = true,
   --     -- Whether to apply the adapted plugin
   --     expands = {
   --       hop = true,

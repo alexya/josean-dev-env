@@ -2,11 +2,16 @@ return {
   "nvim-lualine/lualine.nvim",
   dependencies = {
     "nvim-tree/nvim-web-devicons",
+    -- leverage the lualine's dependencies to load the colorscheme/theme(s)
     "miikanissi/modus-themes.nvim", -- colorscheme "modus"
-    "askfiy/visual_studio_code",
+    "sainnhe/everforest",
+    "Mofiqul/vscode.nvim",
+    "askfiy/visual_studio_code", -- the 'light' colorscheme can't work
     "folke/tokyonight.nvim",
   },
   config = function()
+    vim.cmd([[colorscheme modus]])
+
     local lualine = require("lualine")
 
     -- configure lualine with modified theme
