@@ -71,10 +71,10 @@ return {
           print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
         end, opts) -- show documentation for what is under cursor
 
-        opts.desc = "Format the curent buffer"
-        keymap.set("n", "<leader>fb", function()
-          vim.lsp.buf.format({ async = true })
-        end, opts)
+        -- opts.desc = "Format the curent buffer"
+        -- keymap.set("n", "<leader>fb", function()
+        --   vim.lsp.buf.format({ async = true })
+        -- end, opts)
 
         opts.desc = "Format the selected range"
         local range_formatting = function()

@@ -32,12 +32,12 @@ return {
         "html",
         "cssls",
         "tailwindcss",
-        "svelte",
         "lua_ls",
-        "graphql",
-        "emmet_ls",
-        "prismals",
         "pyright",
+        "emmet_ls",
+        -- "svelte",
+        -- "prismals",
+        -- "graphql",
       },
     })
 

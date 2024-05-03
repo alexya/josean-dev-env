@@ -6,9 +6,6 @@ opt.background = "light" -- customized the background to 'light'
 -- The custm key map
 local keymap = vim.keymap -- for conciseness
 
--- find the recent files (the same shrotcut as the visual studio code)
-keymap.set("n", "<C-p>", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
-
 -- toggle the background
 keymap.set(
   "n",
@@ -59,8 +56,8 @@ keymap.set("n", "<leader>fp", "<cmd>let @+=expand('%:p')<CR>", { desc = "Copy fu
 keymap.set(
   "n",
   "<leader>cp",
-  '0v$h"+y',
-  { noremap = true, silent = true, desc = "Copy the current line to the clipboard" }
+  'v$h"+y',
+  { noremap = true, silent = true, desc = "Copy from current cursor to endline" }
 )
 keymap.set("n", "<S-y>", '0v$h"+y', { desc = "Copy the current line to the clipboard" })
 
