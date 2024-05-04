@@ -6,9 +6,9 @@
 
 # Terminal Setup
 
-✍🏼 Blog Post Step-by-Step Guide: [How To Setup Your Mac Terminal](https://josean.com/posts/terminal-setup)
+🏼 ✍Blog Post Step-by-Step Guide: [How To Make Your Boring Mac Terminal Amazing With Alacritty](https://josean.com/posts/how-to-setup-alacritty-terminal)
 
-📹 Youtube Guide: [How To Make Your Boring Mac Terminal So Much Better](https://www.youtube.com/watch?v=CF1tMjvHDRA&list=PLnu5gT9QrFg36OehOdECFvxFFeMHhb_07&index=2&t=479s)
+📹 Youtube Guide: [How To Make Your Boring Mac Terminal Amazing With Alacritty](https://youtu.be/uOnL4fEnldA)
 
 You'll also need to install extra cli tools as described in this blog post and video:
 
@@ -28,7 +28,7 @@ You'll also need to install extra cli tools as described in this blog post and v
 ### Relevant Files
 
 - [.zshrc](.zshrc) - Zsh Shell Configuration
-- [coolnight.itermcolors](coolnight.itermcolors) - iTerm2 Color Scheme
+- [coolnight.toml](.config/alacritty/themes/themes/coolnight.toml) - Alacritty Color Scheme
 
 # Tmux Setup
 
