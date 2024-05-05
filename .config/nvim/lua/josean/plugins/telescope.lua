@@ -22,6 +22,22 @@ return {
       end,
     })
 
+    local select_one_or_multi = function(prompt_bufnr)
+      local picker = require("telescope.actions.state").get_current_picker(prompt_bufnr)
+      local multi = picker:get_multi_selection()
+      if not vim.tbl_isempty(multi) then
+        require("telescope.actions").close(prompt_bufnr)
+        for _, j in pairs(multi) do
+          if j.path ~= nil then
+            vim.cmd(string.format("%s %s", "tabe", j.path)) -- open the file in a new tab
+          end
+        end
+      else
+        -- require("telescope.actions").select_default(prompt_bufnr) -- open the file in the current tab
+        require("telescope.actions").select_tab(prompt_bufnr) -- open the file in a new tab
+      end
+    end
+
     telescope.setup({
       defaults = {
         sorting_strategy = "ascending",
@@ -31,6 +47,13 @@ return {
           prompt_position = "top",
           preview_cutoff = 120,
         },
+        -- for exmaple to ignore some folders or files
+        file_ignore_patterns = {
+          "yarn.lock",
+          "package-lock.json",
+          "lazy-lock.json",
+          ".git/.*",
+        },
         path_display = { "smart" },
         mappings = {
           i = {
@@ -39,16 +62,21 @@ return {
             ["<C-q>"] = actions.send_selected_to_qflist + custom_actions.open_trouble_qflist,
             ["<C-o>"] = actions.select_tab, -- open the current selected file in a new tab
             ["<C-t>"] = trouble_telescope.smart_open_with_trouble,
+            ["<TAB>"] = actions.toggle_selection,
+            ["<CR>"] = select_one_or_multi,
           },
           n = {
             ["<C-o>"] = actions.select_tab, -- open the current selected file in a new tab
-            ["tt"] = actions.select_tab, -- open the current selected file in a new tab
+            ["t"] = actions.toggle_selection,
+            ["<TAB>"] = actions.toggle_selection,
+            ["<CR>"] = select_one_or_multi,
           },
         },
       },
     })
 
     telescope.load_extension("fzf")
+    telescope.load_extension("notify")
 
     -- set keymaps
     local keymap = vim.keymap -- for conciseness
@@ -67,7 +95,8 @@ return {
     keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "Find help tags" })
     keymap.set("n", "<leader>ft", "<cmd>Telescope tags<cr>", { desc = "Find tags" })
     keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Find buffers" })
-    keymap.set("n", "<leader>fk", "<cmd>Telescope marks<cr>", { desc = "Find buffers" })
+    keymap.set("n", "<leader>fk", "<cmd>Telescope marks<cr>", { desc = "Find marks" })
+    keymap.set("n", "<leader>fn", "<cmd>Telescope notify<cr>", { desc = "Find notifications" })
     -- keymap.set("n", "<leader>fo", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
   end,
 }
