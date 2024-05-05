@@ -98,6 +98,7 @@ return {
         },
         lualine_x = {
           "encoding",
+          -- { 'fileformat', icons_enabled = false },
           "fileformat",
           "filetype",
         },
