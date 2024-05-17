@@ -6,7 +6,7 @@ import = [
     # "~/AppData/Roaming/alacritty/themes/themes/github_dark_dimmed.toml"
     # "~/AppData/Roaming/alacritty/themes/themes/github_dark_high_contrast.toml"
 ]
-# working_directory = "<Change it to yours, e.g. C:\Users\Administrator>"
+# working_directory = "<Change it to yours, e.g. C:\\Users\\Administrator>"
 
 [env]
 TERM = "xterm-256color"
