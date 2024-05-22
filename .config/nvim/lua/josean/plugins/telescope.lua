@@ -63,13 +63,13 @@ return {
             ["<C-o>"] = actions.select_tab, -- open the current selected file in a new tab
             ["<C-t>"] = trouble_telescope.smart_open_with_trouble,
             ["<TAB>"] = actions.toggle_selection,
-            ["<CR>"] = select_one_or_multi,
+            ["<C-CR>"] = select_one_or_multi,
           },
           n = {
             ["<C-o>"] = actions.select_tab, -- open the current selected file in a new tab
             ["t"] = actions.toggle_selection,
             ["<TAB>"] = actions.toggle_selection,
-            ["<CR>"] = select_one_or_multi,
+            ["<C-CR>"] = select_one_or_multi,
           },
         },
       },

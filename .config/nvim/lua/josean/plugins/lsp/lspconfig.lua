@@ -88,7 +88,7 @@ return {
             async = true,
           })
         end
-        keymap.set("v", "<leader>fm", range_formatting, opts)
+        keymap.set("v", "<leader>fs", range_formatting, opts)
 
         opts.desc = "Restart LSP"
         keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
