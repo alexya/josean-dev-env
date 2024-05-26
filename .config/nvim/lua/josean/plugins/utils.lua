@@ -32,6 +32,13 @@ return {
       end, { desc = "Toggle the merge/split code block" })
     end,
   },
+  {
+    "sindrets/diffview.nvim",
+    event = "VeryLazy",
+    config = function()
+      vim.keymap.set("n", "<leader>dv", ":DiffviewOpen<CR>", { desc = "Open the tool Diffview"})
+    end,
+  }
   -- Change the colors, opacity of the theme
   -- {
   --   "mvllow/modes.nvim",
