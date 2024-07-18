@@ -26,7 +26,7 @@ dimensions.lines = 50
 [font]
 # normal.family = "Inconsolata LGC Nerd Font Mono"
 # normal.family = "MesloLGS Nerd Font Mono"
-normal.family = "Hack Nerd Font"
+normal.family = "Hack Nerd Font Mono"
 
 #regular
 size = 12
