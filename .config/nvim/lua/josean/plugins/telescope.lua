@@ -13,7 +13,7 @@ return {
     local transform_mod = require("telescope.actions.mt").transform_mod
 
     local trouble = require("trouble")
-    local trouble_telescope = require("trouble.providers.telescope")
+    local trouble_telescope = require("trouble.sources.telescope")
 
     -- or create your custom action
     local custom_actions = transform_mod({
@@ -61,7 +61,7 @@ return {
             ["<C-j>"] = actions.move_selection_next, -- move to next result
             ["<C-q>"] = actions.send_selected_to_qflist + custom_actions.open_trouble_qflist,
             ["<C-o>"] = actions.select_tab, -- open the current selected file in a new tab
-            ["<C-t>"] = trouble_telescope.smart_open_with_trouble,
+            ["<C-t>"] = trouble_telescope.open,
             ["<TAB>"] = actions.toggle_selection,
             ["<C-CR>"] = select_one_or_multi,
           },
